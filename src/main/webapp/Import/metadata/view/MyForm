@@ -1,0 +1,156 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "designer|initialView": true,
+        "designer|snapToGrid": 10,
+        "designer|userClassName": "MyForm",
+        "height": 280,
+        "layout": "absolute",
+        "title": "导入",
+        "width": 519
+    },
+    "name": "MyForm",
+    "designerId": "a77af141-e5e9-4d48-8e0e-f38c73110331",
+    "cn": [
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "editable": false,
+                "fieldLabel": "导入功能",
+                "layout|x": 50,
+                "layout|y": 20,
+                "name": "module",
+                "store": "MyStore",
+                "value": [
+                    "1"
+                ],
+                "valueField": "id",
+                "width": 350
+            },
+            "name": "MyComboBox",
+            "designerId": "49d5df31-84d2-4453-a857-7069116fceec",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onComboboxChange",
+                        "implHandler": [
+                            "var m = field.getStore().getById(newValue);",
+                            "var mType = this.down('[name=mType]');",
+                            "var s = mType.getStore();",
+                            "s.loadData(m.raw.children);",
+                            "mType.setValue(m.raw.children[0].id);"
+                        ],
+                        "name": "change",
+                        "scope": "me"
+                    },
+                    "name": "onComboboxChange",
+                    "designerId": "c35f96b1-9c30-4dc0-8128-76e09594dbe3"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "editable": false,
+                "fieldLabel": "功能类型",
+                "layout|x": 50,
+                "layout|y": 70,
+                "name": "mType",
+                "store": "MyStore1",
+                "value": [
+                    "11"
+                ],
+                "valueField": "id",
+                "width": 350
+            },
+            "name": "MyComboBox1",
+            "designerId": "379232ec-7c05-4d9b-90ad-6a9362a927f1"
+        },
+        {
+            "type": "Ext.form.field.File",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "buttonText": "选择文件",
+                "fieldLabel": "选择文件",
+                "layout|x": 50,
+                "layout|y": 120,
+                "name": "file"
+            },
+            "name": "MyFileUpload",
+            "designerId": "63167ddf-0090-4741-8eb3-6be37d66528c"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|x": 400,
+                "layout|y": 170,
+                "text": "确认导入"
+            },
+            "name": "MyButton",
+            "designerId": "b92f571c-7450-49f0-9d97-5665249aad36",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onButtonClick",
+                        "implHandler": [
+                            "if(this.down('filefield').getValue()=='' || this.down('filefield').getValue()==null){",
+                            "    alert('请选择文件');",
+                            "}else{",
+                            "    this.submit({",
+                            "        url:'excel/parse',",
+                            "        success:function(form,rs){",
+                            "            var resText = Ext.JSON.decode(rs.response.responseText).data;",
+                            "            resText = Ext.JSON.decode(resText);",
+                            "            window.parent.postMessage(resText,'http://112.111.2.107');",
+                            "        }",
+                            "    });",
+                            "}"
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "name": "onButtonClick",
+                    "designerId": "69ab584d-3126-408b-bebf-22f7e518c30f"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+{
+    "name": "Import",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "",
+        "exportPath": "D:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/fjdr/Import",
+        "projectHasEnabledWebServer": false,
+        "lockUrlPrefix": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed",
+        "displayfield-ExtBox1-1180-inputEl": "a new version of the framework is available"
+    },
+    "xdsVersion": "3.2.0",
+    "xdsBuild": 75,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "a77af141-e5e9-4d48-8e0e-f38c73110331"
+        ],
+        "store": [
+            "cbee3ca4-4a84-40be-9323-37779ed999ff",
+            "eafeb7b2-4ae3-46d3-881a-db7757675822"
+        ],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "4f770fa6-69fc-40e0-9a62-bb8cff329c63",
+            "498c2eaa-a424-41f8-a10c-e9366447c510"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

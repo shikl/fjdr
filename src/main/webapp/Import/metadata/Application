@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "name": "Import",
+        "paths": [
+            "{",
+            "Import:'Import/app'",
+            "}"
+        ],
+        "stores": [
+            "MyStore",
+            "MyStore1"
+        ],
+        "views": [
+            "MyForm"
+        ]
+    },
+    "name": "Application",
+    "configAlternates": {
+        "paths": "object"
+    },
+    "designerId": "application",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "paths",
+            "type": "string"
+        }
+    ]
+}
